@@ -12,12 +12,12 @@ SmartRoute分布式业务号生成服务，服务通过规则的方式描述序�
     描述当前日期，format是指日期输出的格式
 ##{CN:value}
     描述中文对应的拼音，value是指相应的中文字
-##规则定义
+##业务号规则定义
     序号技术规则可以是以上任意描述的组合
     {N:{D:yyyyMMdd}/000000}
     {S:OD}{CN:深圳}{D:yyyyMM}{N:{CN:深圳}{D:yyyyMM}/00000000}
     实际上也可以根据需要扩展出新的基础规则描述
-##序号生成服务部
+##业务号生成服务部署
 ``` c#
 	class Program
 	{
@@ -33,7 +33,7 @@ SmartRoute分布式业务号生成服务，服务通过规则的方式描述序�
 		}
 	}
 ```
-##生成序列调用
+##业务号生成
 ``` c#
 			INode node = NodeFactory.Default;
 			node.Loger.Type = LogType.ALL;
